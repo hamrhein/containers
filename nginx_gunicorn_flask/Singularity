@@ -18,9 +18,6 @@ From: debian:bullseye
     nginx.conf /proj
 
 %post
-    # Enable local apt proxy server
-    echo 'Acquire::http::Proxy "http://starr.home:3142";' > /etc/apt/apt.conf.d/20proxy
-
     export DEBIAN_FRONTEND=noninteractive
     export TZ="America/Los_Angeles"
 
@@ -33,9 +30,6 @@ From: debian:bullseye
     # Clean the apt files
     apt-get clean
     rm -r /var/lib/apt/lists/*
-
-    # Disable local apt proxy server
-    rm /etc/apt/apt.conf.d/20proxy
 
     mv /proj/nginx.conf /etc/nginx
 
