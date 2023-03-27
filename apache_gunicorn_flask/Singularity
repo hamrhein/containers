@@ -1,5 +1,6 @@
-Bootstrap: library
-From: debian:bullseye
+Bootstrap: debootstrap
+OSVersion: bookworm
+MirrorURL: http://deb.debian.org/debian/
 
 %help
     See the README.md file in /doc
@@ -7,6 +8,7 @@ From: debian:bullseye
 %setup
     mkdir -p ${SINGULARITY_ROOTFS}/app
     mkdir -p ${SINGULARITY_ROOTFS}/proj
+    mkdir -p ${SINGULARITY_ROOTFS}/doc
 
 %environment
     export LC_ALL=C.UTF-8
@@ -16,6 +18,7 @@ From: debian:bullseye
     app.py /app
     gunicorn_config.py /proj
     flask_stub.conf /proj
+    README.md /doc
 
 %post
     export DEBIAN_FRONTEND=noninteractive
