@@ -1,5 +1,6 @@
-Bootstrap: library
-From: debian:bullseye
+Bootstrap: debootstrap
+OSVersion: bookworm
+MirrorURL: http://deb.debian.org/debian/
 
 %help
     See the README.md file in /doc
@@ -16,6 +17,7 @@ From: debian:bullseye
     app.py /app
     gunicorn_config.py /proj
     nginx.conf /proj
+    README.md /doc
 
 %post
     export DEBIAN_FRONTEND=noninteractive
