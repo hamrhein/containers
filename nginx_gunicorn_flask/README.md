@@ -6,7 +6,7 @@ Debian 12 (Bookworm)
 
 ### Software
 
-Nginx
-Gunicorn
-Flask
+*  Nginx
+*  Gunicorn
+*  Flask
 
