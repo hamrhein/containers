@@ -8,6 +8,7 @@ MirrorURL: http://deb.debian.org/debian/
 %setup
     mkdir -p ${SINGULARITY_ROOTFS}/app
     mkdir -p ${SINGULARITY_ROOTFS}/proj
+    mkdir -p ${SINGULARITY_ROOTFS}/doc
 
 %environment
     export LC_ALL=C.UTF-8
